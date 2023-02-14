@@ -1,0 +1,2 @@
+FLASK_APP=address_Manager_app/address_Manager_app
+FLASK_DEBUG= True

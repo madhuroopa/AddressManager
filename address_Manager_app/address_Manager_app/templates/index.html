@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Address Manager</title>
+    <meta charset="utf-8" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   
+    <style>
+        #searchBox {
+            width: 400px;
+        }
+
+        .addressForm {
+            margin-top: 10px;
+            background-color: #008272;
+            color: #fff;
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+            .addressForm input {
+                width: 265px;
+            }
+    </style>
+</head>
+<body>
+    <table class="addressForm">
+        <h1>Address Manager</h1>
+        <tr><td>Street Number:</td><td><input type="text" id="streetNumber" /></td></tr>
+        <tr><td>Street Address:</td><td><input type="text" id="streetAddress" /></td></tr>
+        <tr><td>City:</td><td><input type="text" id="city" /></td></tr>
+       
+                <tr><td>State:</td><td><input type="text" id="state"/>
+                    <select id ="dropdown_state">
+                        <option></option>
+                    </select>
+
+                </td></tr>
+                <tr><td>Zip Code:</td><td><input type="text" id="postalCode"/></td></tr>
+                <tr><td>Country:</td><td><input type="text" id="country"/>
+                <select id ="dropdown_country">
+                        <option></option>
+                    </select></td></tr>
+                    <script src ="{{url_for('static',filename='scripts/script.js')}}"></script>
+            </table>
+
+        </body>
+        </html>
