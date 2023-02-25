@@ -17,16 +17,28 @@
             border-radius: 10px;
             padding: 10px;
         }
-
-            .addressForm input {
-                width: 265px;
-            }
+        #address-list {
+                    position: absolute;
+                    background-color: white;
+                    border: 1px solid gray;
+                    z-index: 1;
+                    max-height: 150px;
+                    overflow-y: scroll;
+                }
+           
     </style>
+    <script src ="{{url_for('static',filename='scripts/script.js')}}"></script>
 </head>
 <body>
+
     <table class="addressForm">
         <h1>Address Manager</h1>
-        <tr><td>Street Number:</td><td><input type="text" id="streetNumber" /></td></tr>
+        <tr><td>Street Number:</td><td><input type="text" id="streetNumber" list="address-list" autocomplete="off"/>
+            <datalist id="address-list">
+                <!-- Options will be populated dynamically with JavaScript -->
+              </datalist>
+        </td></tr>
+      
         <tr><td>Street Address:</td><td><input type="text" id="streetAddress" /></td></tr>
         <tr><td>City:</td><td><input type="text" id="city" /></td></tr>
        
@@ -36,13 +48,23 @@
                     </select>
 
                 </td></tr>
-                <tr><td>Zip Code:</td><td><input type="text" id="postalCode"/></td></tr>
-                <tr><td>Country:</td><td><input type="text" id="country"/>
-                <select id ="dropdown_country">
-                        <option></option>
+                <tr><td>Zip Code:</td><td><input type="text" id="postalCode"/>
+                    <datalist id="address-list1">
+                        <!-- Options will be populated dynamically with JavaScript -->
+                      </datalist>
+                </td></tr>
+                <!--<tr><td>Country:</td><td><input type="text" id="country"/>-->
+                    <tr><td>Country:</td><td><select id ="dropdown_country">
+                    <option value="none" selected disabled hidden>COUNTRY</option>
+                        <option value="UNITED STATES">UNITED STATES</option>
+                        <option value="CANADA">CANADA</option>
+                        <option value="INDIA">INDIA</option>
+                        
+                     
                     </select></td></tr>
-                    <script src ="{{url_for('static',filename='scripts/script.js')}}"></script>
+                    
             </table>
 
+         
         </body>
         </html>
