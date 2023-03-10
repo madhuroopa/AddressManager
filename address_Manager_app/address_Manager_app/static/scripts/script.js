@@ -136,6 +136,21 @@ $(document).ready(function () {
         // make an AJAX request to the API endpoint
         $('#alert-container').empty();
         $('#addresses').empty();
+        var postalCodeMappings = {
+          "US": /^\d{5}(-\d{4})?$/,
+          "CA": /^[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d$/,
+          "DK": /^\d{5}$/,
+          "MX": /^\d{5}$/,
+          "ES": /^\d{5}$/
+        };
+
+        var postalCodeRegex = postalCodeMappings[country_code];
+        if(postal_code!=""){
+          if(!postalCodeRegex.test(postal_code)){
+            alert("Invalid postal code for the selected country ");
+          }
+        }
+        else{
         $.getJSON('/address_API/search', params)
         .done(function (data) {
           
@@ -251,7 +266,7 @@ $(document).ready(function () {
             return;
           } 
         });
-        
+      } 
     });
     $('#addresses').on("click","tr",function () {
       if(fields.length!=0){
