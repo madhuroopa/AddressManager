@@ -9,3 +9,4 @@ def create_app():
     mongodb.init_app(app)
     app.register_blueprint(main)
     return app
+

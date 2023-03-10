@@ -40,7 +40,7 @@ def search_address():
     filters = {'country_code': {'$in': country_code}}
     
     if recipient_name:
-        filters['recipient_name'] = {'$regex': f'.*{recipient_name}.*', '$options': 'i'}
+        filters['recipient_name'] = {'$regex':  f'^{recipient_name}$', '$options': 'i'}
     if street:
         filters['street'] = {'$regex': f'.*{street}.*', '$options': 'i'}
     if city:

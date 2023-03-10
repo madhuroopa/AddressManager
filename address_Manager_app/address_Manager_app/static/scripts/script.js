@@ -142,7 +142,9 @@ $(document).ready(function () {
           console.log('Received response:', data);
           
                 // handle the response data
-                
+         
+
+               
                 var addresses = data;
                 
                 console.log(fields)
@@ -162,6 +164,7 @@ $(document).ready(function () {
                 headerRow.append($("<th>").text("Country Name"));
                 headerRow.append($("<th>").text("Recipient Name"));
                 headerRow.append($("<th>").text("Street"));
+                headerRow.append($("<th>").text("Region/Neighborhood"));
                 headerRow.append($("<th>").text("Postal Code"));
                 headerRow.append($("<th>").text("City"));
                 headerRow.append($("<th>").text("State"));
@@ -169,7 +172,7 @@ $(document).ready(function () {
               }
                 
                 
-               
+              var bodyRows = [];
               if(fields.length!=0){
                 $.each(addresses, function(index, address) {
                     var row = $("<tr>");
@@ -199,9 +202,12 @@ $(document).ready(function () {
                         row.append($("<td>").text(address.country));
                       }
                     table.append(row);
+                    //bodyRows.push(row);
+                    
                     console.log(row)
                     
                     }
+                    
                   });
                   }
                     else{
@@ -211,15 +217,19 @@ $(document).ready(function () {
                         row.append($("<td>").text(address.country));
                         row.append($("<td>").text(address.recipient_name));
                         row.append($("<td>").text(address.street));
+                        row.append($("<td>").text(address.region));
                         row.append($("<td>").text(address.postal_code));
                         row.append($("<td>").text(address.city));
                         row.append($("<td>").text(address.state));
                         table.append(row);
+                      
     
 
                       });
                     }
-               
+                   
+                
+                    
               })
         .fail(function (jqXHR, textStatus, errorThrown) {
           if (jqXHR.status === 404) {

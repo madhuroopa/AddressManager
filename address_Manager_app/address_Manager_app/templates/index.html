@@ -42,7 +42,11 @@
     }
     </style>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-   
+    
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
+  
    
     <script src ="{{url_for('static',filename='scripts/script.js')}}"></script>
 </head>
@@ -119,14 +123,15 @@
     </div>
 </div>
         <div id="address-results">
-          <table id ="addresses">
+          <table id ="addresses"data-page-size="10">
 
           </table>
-
+          <div id="pagination-container"></div>
         </div>
         <div ></div>
         <div id="alert-container">
           
         </div>
+      
         </body>
         </html>
