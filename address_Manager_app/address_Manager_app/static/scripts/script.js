@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    document.getElementById('form').style.display="none";
+    document.getElementById('form').style.display="none"; //event listener for the input element changes
     var table = $('#addresses');
     var fields=[]
     $('#country_codes').on('change', function() {
@@ -51,7 +51,7 @@ $(document).ready(function () {
                 if(data[i][component][0]!=""){
                   fields.push(component)
                   input.attr('placeholder', data[i][component][1]);
-                  input.prev().text(data[i][component][0].trim());
+                  input.prev().text(data[i][component][0].trim());              // Adds classes to visible address form fields based on selected country code
                   var divId = $('#' + component).closest("div").attr("id");
                   console.log(divId)
                   
@@ -174,16 +174,12 @@ $(document).ready(function () {
                 table.append(headerRow);
               }
               else{
-                var headerRow = $("<tr>");
-                headerRow.append($("<th>").text("Country"));
-                headerRow.append($("<th>").text("Country Name"));
-                headerRow.append($("<th>").text("Recipient Name"));
-                headerRow.append($("<th>").text("Street"));
-                headerRow.append($("<th>").text("Region/Neighborhood"));
-                headerRow.append($("<th>").text("Postal Code"));
-                headerRow.append($("<th>").text("City"));
-                headerRow.append($("<th>").text("State"));
-                table.append(headerRow);
+                    var headers = ["Country", "Country Name", "Recipient Name", "Street", "Region/Neighborhood", "Postal Code", "City", "State"];
+                    var headerRow = $("<tr>");
+                    $.each(headers, function(index, value) {
+                     headerRow.append($("<th>").text(value));
+                    });
+                    table.append(headerRow);
               }
                 
                 
