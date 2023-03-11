@@ -1,0 +1,6 @@
+Flask
+pymongo
+Flask-PyMongo
+flask_pymongo
+Flask-Caching
+gunicorn

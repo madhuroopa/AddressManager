@@ -1,0 +1,112 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "title": "Address API",
+      "version": "1.0"
+    },
+    "servers": [
+        {
+          "url": "http://localhost:5000/",
+          "description": "Local development server"
+        }
+      ],
+    "paths": {
+      "/address_API/search": {
+        "get": {
+          "summary": "Search for addresses.",
+          "parameters": [
+            {
+              "name": "country_code",
+              "in": "query",
+              "description": "Country code(s) to filter addresses by.",
+              "required": true,
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "recipient_name",
+              "in": "query",
+              "description": "Recipient name to filter addresses by.",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "name": "street",
+              "in": "query",
+              "description": "Street name or address to filter addresses by.",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "name": "city",
+              "in": "query",
+              "description": "City name to filter addresses by.",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "name": "state",
+              "in": "query",
+              "description": "State or province name to filter addresses by.",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "name": "postal_code",
+              "in": "query",
+              "description": "Postal code to filter addresses by.",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "List of addresses that match the given criteria.",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "type": "object"
+                }
+              }
+            },
+            "404": {
+              "description": "No addresses found for the given criteria.",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "error": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/address_API/addressformat/{country_code}": {
+        "get": {
+          "summary": "Get the address format for a given country code.",
+          "parameters": [
+            {
+              "name": "country_code",
+              "in": "path",
+              "description": "Country code to retrieve the address format for.",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Address format for the given country code.",
+              "schema": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  

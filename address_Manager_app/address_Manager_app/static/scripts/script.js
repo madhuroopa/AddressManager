@@ -16,10 +16,11 @@ $(document).ready(function () {
         $(".form-group").each(function() {
           // Get the input element and its label
           var input = $(this).find(".form-control");
-          var label = $(this).find(".label");
-        
+          var label = $(this).find("label");
+          
           // Reset the label and placeholder values to the default values
-          label.text(input.attr("data-default-label"));
+          console.log(label)
+          label.text(label.attr("data-default-label"));
           
           input.attr("placeholder", input.attr("data-default-placeholder"));
         });
@@ -237,9 +238,6 @@ $(document).ready(function () {
                         row.append($("<td>").text(address.city));
                         row.append($("<td>").text(address.state));
                         table.append(row);
-                      
-    
-
                       });
                     }
                    
@@ -282,12 +280,15 @@ $(document).ready(function () {
       var country_code = $(this).find("td:nth-child(1)").text();
       var recipient_name = $(this).find("td:nth-child(3)").text();
       var street=$(this).find("td:nth-child(4)").text();
-      var postal_code = $(this).find("td:nth-child(5)").text();
-      var city = $(this).find("td:nth-child(6)").text();
-      var state = $(this).find("td:nth-child(7)").text();
+      var region=$(this).find("td:nth-child(5)").text();
+      var postal_code = $(this).find("td:nth-child(6)").text();
+      var city = $(this).find("td:nth-child(7)").text();
+      var state = $(this).find("td:nth-child(8)").text();
     $("#country_codes").val([country_code]); // use an array to set the value of a multi-select dropdown
     $("#recipient_name").val(recipient_name);
+
     $("#street").val(street);
+    $("#region").val(region);
     $("#city").val(city);
     $("#state").val(state);
     $("#postal_code").val(postal_code);
