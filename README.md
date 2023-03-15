@@ -1,16 +1,16 @@
 # AddressManager
 
-INTRODUCTION
+## INTRODUCTION
 The common requirement for variety of applications such as E-Commerce platforms, Shipping/ delivery services, Location based services etc. It is to be maintaining and handling postal addresses. The requirement is to build a web-based interface that dynamically captures country specific address formats. The validation of the address given by the user, searching for the address and retrieving the results and displaying them, everything must be efficient and the response time must be less. 
 Overall, the problem statement requires us to design and implement a scalable, reliable, and efficient API that can provide accurate addresses based on input parameters such as postal code, state, country, or any combination of address specific details. This involves understanding the functional and nonfunctional requirements, selecting appropriate data sources to retrieve data and use it, designing an appropriate architecture and data model, and implementing the API using appropriate programming languages and frameworks.
-ARCHITECTURAL OVERVIEW
-Syatem Context diagram
+## ARCHITECTURAL OVERVIEW
+## System Context diagram
 ![image](https://user-images.githubusercontent.com/22576343/225454827-21848b6a-1adc-4013-902f-90cef5754b48.png)
 
 
 In this context diagram, the Client is the external entity that sends HTTP requests to the RESTful API, which then returns the street address data based on the input parameters (combination of any of the Postal Code, State, or address details). The client can provide the combination of input, For instance, Street Number and zip code or country, state and city and the API returns the corresponding street address data as output. 
  
-COMPONENT DIAGRAM
+## COMPONENT DIAGRAM
 ![image](https://user-images.githubusercontent.com/22576343/225454932-3aad0060-7902-4c47-a235-70825c3cab51.png)
 
  The above diagram is the high-level version of component diagram which show what all components are involved and how are they interacting with each other and data. 
@@ -24,7 +24,7 @@ Components:
 •	Cache: The code uses a cache to store search results. This will reduce the response time of a request.
 Connector:
 •	MongoDB driver: A connector that allows the Flask application to communicate with the MongoDB database.
-ARCHITECTURAL STYLE
+## ARCHITECTURAL STYLE
 ![image](https://user-images.githubusercontent.com/22576343/225454959-0c03d27b-e8ee-4e0f-aa09-7d0f4de4b446.png)
 
 RESTful API design style can be chosen for this system. REST is a widely used architectural style for web services due to its simplicity, scalability, and flexibility.
@@ -36,7 +36,7 @@ It uses standard HTTP protocols for communication, which makes it easy to develo
 •	Database: Mongo DB
 •	Load Balancer: Nginx
 •	Load Testing Tool: Apache JMeter
-API SETUP
+## API SETUP
 
 Flask Installation: pip install Flask.
 Mongo DB : pip install Flask-Pymongo
@@ -65,8 +65,8 @@ Here the min time is 3 ms and max time is 129 ms
 
 
 Response Time of an API with cache implementation running on Nginx server but using 5 server instance to balance the load for 1000 requests
+![image](https://user-images.githubusercontent.com/22576343/225455518-6aaa1aa0-dd5e-4499-a601-a6bafa879f5b.png)
 
- ![image](https://user-images.githubusercontent.com/22576343/225455343-b4e00cbc-4494-4a23-bf7d-e156d4fe9f6e.png)
 
 Summary of response stats:
 ![image](https://user-images.githubusercontent.com/22576343/225455374-83db512f-b4a8-41ec-92f1-e720e05d8adc.png)
