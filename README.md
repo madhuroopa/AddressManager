@@ -38,13 +38,13 @@ It uses standard HTTP protocols for communication, which makes it easy to develo
 •	Load Testing Tool: Apache JMeter
 ## API SETUP
 
-Flask Installation: pip install Flask.
-Mongo DB : pip install Flask-Pymongo
-Flask-Caching: pip install Flask-Caching
-Flask-Swagger: pip install flask-swagger-ui
+##### Flask Installation: pip install Flask.
+##### Mongo DB : pip install Flask-Pymongo
+##### Flask-Caching: pip install Flask-Caching
+##### Flask-Swagger: pip install flask-swagger-ui
 
-LOAD BALANCER Tool: Nginx
-LOAD TESTING Tool: Apache JMeter
+##### LOAD BALANCER Tool: Nginx
+##### LOAD TESTING Tool: Apache JMeter
 
 Apache JMeter is a popular open-source tool for load testing, performance testing, and functional testing of applications.
 NGINX is a popular open-source web server, reverse proxy, and load balancer software that is widely used for serving static and dynamic content on the web. NGINX is known for its high performance, scalability, and low memory footprint. It can handle large amounts of traffic while consuming very few resources, making it ideal for high-traffic websites and web applications.
